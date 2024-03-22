@@ -1,6 +1,5 @@
 package com.spring.core.chap02;
 
-import com.spring.core.chap04.SushiCourse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
     public class AsianRestaurant implements Restaurant {
 
         private Chef chef;
-        private com.spring.core.chap04.SushiCourse course = new SushiCourse();
+        private SushiCourse course = new SushiCourse();
 
         @Autowired
         public AsianRestaurant(@Qualifier("kc") Chef chef) {

@@ -1,6 +1,5 @@
 package com.spring.core.chap02;
 
-import com.spring.core.chap04.WesternCourse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -10,7 +9,7 @@ public class WesternRestaurant implements Restaurant {
 
     // 의존 객체
     private Chef chef;
-    private com.spring.core.chap04.WesternCourse course = new WesternCourse();
+    private WesternCourse course = new WesternCourse();
 
     @Autowired
     public WesternRestaurant(@Qualifier("jc") Chef chef) {
