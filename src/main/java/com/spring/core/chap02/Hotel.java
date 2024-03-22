@@ -1,5 +1,8 @@
-package com.spring.core.chap01;
+package com.spring.core.chap02;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Hotel {
 
@@ -7,7 +10,8 @@ public class Hotel {
     private Restaurant restaurant;
     private Chef chef;
 
-    public Hotel(Restaurant restaurant, Chef chef) {
+    @Autowired // 스프링의 빈으로 등록된 의존 객체를 알아서 넣어주는 기능.
+    public Hotel(@Qualifier("ar") Restaurant restaurant, @Qualifier("kc") Chef chef) {
         this.restaurant = restaurant;
         this.chef = chef;
     }

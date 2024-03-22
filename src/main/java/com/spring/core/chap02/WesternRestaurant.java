@@ -1,12 +1,19 @@
-package com.spring.core.chap01;
+package com.spring.core.chap02;
 
+import com.spring.core.chap04.WesternCourse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("wr")
 public class WesternRestaurant implements Restaurant {
 
     // 의존 객체
     private Chef chef;
-    private WesternCourse course = new WesternCourse();
+    private com.spring.core.chap04.WesternCourse course = new WesternCourse();
 
-    public WesternRestaurant(Chef chef) {
+    @Autowired
+    public WesternRestaurant(@Qualifier("jc") Chef chef) {
         this.chef = chef;
     }
 
